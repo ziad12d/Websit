@@ -1,0 +1,339 @@
+/* الاساسي */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+  margin:0;
+  font-family:'Tektur',system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;
+  background:#FFFFFF;
+  color:#1A1A1A;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased
+}
+.container{
+  max-width:1150px;
+  margin:0 auto;
+  padding:0 20px
+}
+
+/* الناف بار */
+.nav{
+  position:sticky;
+  top:0;
+  z-index:60;
+  background:linear-gradient(180deg, rgba(17,17,17,0.98), #001429);
+  box-shadow:0 8px 30px rgba(17,17,17,0.18);
+  backdrop-filter:blur(6px)
+}
+.nav-inner{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:36px;
+  padding:16px 0
+}
+.brand{
+  position:absolute;
+  left:18px;
+  font-size:1.25rem;
+  font-weight:800;
+  letter-spacing:0.4px;
+  color:#C8A24D;
+  text-decoration:none
+}
+.site-nav{
+  display:flex;
+  align-items:center;
+  gap:28px
+}
+.nav-links{
+  display:flex;
+  gap:20px;
+  list-style:none;
+  margin:0;
+  padding:0
+}
+.nav-link{
+  padding:8px 12px;
+  border-radius:10px;
+  font-weight:700;
+  text-decoration:none;
+  color:rgba(255,255,255,0.92);
+  transition:transform 180ms ease,background 180ms ease,color 180ms ease
+}
+.nav-link:hover{
+  transform:translateY(-3px);
+  color:#C8A24D
+}
+.nav-link.active{
+  background:linear-gradient(90deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+  box-shadow: 0 0 0 2px #C8A24D inset; 
+  border-radius:10px;
+}
+.auth{
+  position:absolute;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  display:flex;
+  align-items:center;
+  gap:12px
+}
+
+
+/* الازرار */
+.btn{
+  display:inline-block;
+  padding:10px 16px;
+  border-radius:10px;
+  font-size:0.95rem;
+  font-weight:700;
+  text-decoration:none;
+  transition:transform 180ms ease,box-shadow 180ms ease
+}
+.btn-outline{
+  background:transparent;
+  color:#FFFFFF;
+  border:1px solid rgba(255,255,255,0.10)
+}
+.btn-outline:hover{
+  transform:translateY(-3px)
+}
+.btn-primary{
+  background:#C8A24D;
+  color:#001429;
+  border:1px solid rgba(0,0,0,0.06);
+  box-shadow:0 10px 30px rgba(200,162,77,0.12)
+}
+.btn-primary:hover{
+  transform:translateY(-4px);
+  box-shadow:0 18px 36px rgba(200,162,77,0.14)
+}
+
+/* المساحات  */
+.page-spacer{
+  flex:1;
+  padding:48px 20px
+}
+.scene{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none
+}
+.bg-shape{
+  display:none
+}
+
+
+
+
+/* الفوتر */
+.site-footer{
+  margin-top:auto;
+  padding:56px 0 28px;
+  background:#001429;
+  color:#FFFFFF;
+  border-top:1px solid rgba(255,255,255,0.04)
+}
+.footer-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:24px
+}
+.brand-footer{
+  font-size:1.05rem;
+  font-weight:800;
+  color:#C8A24D;
+  text-decoration:none
+}
+.foot-desc{
+  margin:10px 0;
+  color:rgba(255,255,255,0.88)
+}
+.footer-col h4{
+  margin:0 0 12px;
+  color:#FFFFFF
+}
+.footer-col ul{
+  margin:0;
+  padding:0;
+  list-style:none
+}
+.footer-col a{
+  color:rgba(255,255,255,0.88);
+  text-decoration:none
+}
+.contact-item{
+  margin:6px 0;
+  color:rgba(255,255,255,0.88)
+}
+.footer-bottom{
+  margin-top:20px;
+  padding-top:18px;
+  text-align:center;
+  color:rgba(255,255,255,0.72);
+  border-top:1px solid rgba(255,255,255,0.04)
+}
+.social-icons{
+  display:flex;
+  gap:10px;
+  margin-top:12px
+}
+.social{
+  width:40px;
+  height:40px;
+  border-radius:10px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  color:rgba(255,255,255,0.95);
+  border:1px solid rgba(255,255,255,0.04);
+  transition:transform 180ms ease,background 180ms ease
+}
+.social:hover{
+  transform:translateY(-6px);
+  background:#C8A24D;
+  color:#001429;
+  border-color:transparent
+}
+
+/* تاثير */
+.text-muted{color:#6B6B6B}
+.lead{
+  font-size:1.05rem;
+  color:#6B6B6B
+}
+
+/* انيميشن */
+@media (max-width:760px){
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:420px){
+  .footer-grid{grid-template-columns:1fr}
+  .auth{
+    width:100%;
+    justify-content:flex-start
+  }
+}
+
+.signup-section{
+  flex:1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:90px 0;
+  background:#ffffff; 
+}
+
+.image-box{
+  width:900px; 
+  height:600px;
+  border-radius:40px;
+  background:url("image\ of\ the\ villa\ 2.jpeg") center/cover no-repeat; 
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  box-shadow:0 40px 80px rgba(0,0,0,0.15);
+  position:relative;
+}
+
+.form-box{
+  width:340px; 
+  max-width: 380px;
+  height: 500px; 
+  padding:30px;
+  border-radius:30px;
+  background:rgba(255,255,255,0.7); 
+  backdrop-filter:blur(18px);
+}
+
+.form-box h2{
+  text-align:center;
+  font-size:22px; 
+  margin-bottom:10px;
+  font-weight:700; 
+}
+
+.input-group input:focus{
+outline:none;
+border:2px solid #C8A24D;
+box-shadow:0 0 6px rgba(200,162,77,0.5);
+}
+
+.login-text a{
+  color:#C8A24D;
+  font-weight:600;
+  text-decoration:none;
+}
+
+.login-text a:hover{
+  text-decoration:underline;
+}
+
+/* الانبوت */
+.input-group input{
+  width:100%;
+  padding:10px 12px;
+  border:none;
+  border-radius:12px;
+  background:#f5f5f5; 
+  font-size:13px; 
+}
+
+/* الزر */
+.signup-btn{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:25px;
+  background:#C8A24D; 
+  color:#000;
+  font-weight:700;
+  cursor:pointer;
+  margin-top:8px; 
+  transition:0.3s;
+}
+
+/* انيميشن ظهور مربع التسجيل */
+.form-box{
+  animation: revealForm 1s ease forwards;
+  transform: translateY(40px);
+  opacity: 0;
+}
+
+/* تعريف الحركة */
+@keyframes revealForm{
+  from{
+    opacity:0;
+    transform:translateY(40px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+
+
+.password-box{
+position:relative;
+}
+
+.toggle-password{
+position:absolute;
+right:12px;
+top:50%;
+transition: traslatey(-50%);
+cursor:pointer;
+color:#888;
+font-size:16px;
+}
+
+.toggle-password:hover{
+color:#494948;
+}
